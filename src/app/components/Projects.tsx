@@ -1,4 +1,6 @@
 import Image from "next/image";
+import FadeIn from "./FadeIn";
+import TiltCard from "./TiltCard";
 
 const projects = [
   {
@@ -70,95 +72,100 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <p className="text-accent font-mono text-sm mb-2 tracking-wide">
-          Featured Work
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-16">
-          Projects
-        </h2>
+        <FadeIn>
+          <p className="text-accent font-mono text-sm mb-2 tracking-wide">
+            Featured Work
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-16">
+            Projects
+          </h2>
+        </FadeIn>
 
         <div className="flex flex-col gap-20">
           {projects.map((project, i) => (
-            <div
-              key={project.title}
-              className={`flex flex-col gap-8 lg:flex-row lg:gap-12 ${
-                i % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Image */}
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex-1 overflow-hidden rounded-xl border border-border bg-surface"
+            <FadeIn key={project.title}>
+              <div
+                className={`flex flex-col gap-8 lg:flex-row lg:gap-12 ${
+                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
               >
-                <Image
-                  src={project.image}
-                  alt={`Screenshot of ${project.title}`}
-                  width={1280}
-                  height={800}
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
-              </a>
-
-              {/* Content */}
-              <div className="flex-1 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-muted leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                {/* Highlights */}
-                <ul className="space-y-2 mb-6">
-                  {project.highlights.map((h) => (
-                    <li
-                      key={h}
-                      className="flex items-start gap-2 text-sm text-muted"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                      {h}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-md bg-surface px-3 py-1 text-xs font-medium text-accent-light border border-border"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
-                >
-                  View Live Site
-                  <svg
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
+                {/* Image with 3D tilt */}
+                <TiltCard className="flex-1">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block overflow-hidden rounded-xl border border-border bg-surface"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    <Image
+                      src={project.image}
+                      alt={`Screenshot of ${project.title}`}
+                      width={1280}
+                      height={800}
+                      className="w-full h-auto"
                     />
-                  </svg>
-                </a>
+                    <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
+                  </a>
+                </TiltCard>
+
+                {/* Content */}
+                <div className="flex-1 flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+
+                  {/* Highlights */}
+                  <ul className="space-y-2 mb-6">
+                    {project.highlights.map((h) => (
+                      <li
+                        key={h}
+                        className="flex items-start gap-2 text-sm text-muted"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md bg-surface px-3 py-1 text-xs font-medium text-accent-light border border-border"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-light transition-colors"
+                  >
+                    View Live Site
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </div>

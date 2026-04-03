@@ -1,7 +1,10 @@
+import FadeIn from "./FadeIn";
+
 export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
+        <FadeIn>
         <div className="rounded-2xl border border-border bg-surface p-12 text-center">
           <p className="text-accent font-mono text-sm mb-2 tracking-wide">
             Get In Touch
@@ -47,6 +50,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
+        </FadeIn>
       </div>
 
       {/* Footer */}

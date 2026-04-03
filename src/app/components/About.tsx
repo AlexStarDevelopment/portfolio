@@ -79,20 +79,24 @@ const certifications = [
   },
 ];
 
+import FadeIn from "./FadeIn";
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-6">
       <div className="mx-auto max-w-6xl">
-        <p className="text-accent font-mono text-sm mb-2 tracking-wide">
-          Background
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-16">
-          About Me
-        </h2>
+        <FadeIn>
+          <p className="text-accent font-mono text-sm mb-2 tracking-wide">
+            Background
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-16">
+            About Me
+          </h2>
+        </FadeIn>
 
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Bio */}
-          <div className="lg:col-span-2 space-y-4">
+          <FadeIn className="lg:col-span-2 space-y-4">
             <p className="text-muted leading-relaxed">
               I&apos;m a full-stack developer based in St. Paul, Minnesota. I specialize in
               building data-driven web applications that turn complex, messy
@@ -156,10 +160,10 @@ export default function About() {
                 ))}
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Skills sidebar */}
-          <div className="space-y-8">
+          <FadeIn className="space-y-8">
             <h3 className="text-lg font-semibold text-foreground">Skills</h3>
             {skills.map((group) => (
               <div key={group.category}>
@@ -178,7 +182,7 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
