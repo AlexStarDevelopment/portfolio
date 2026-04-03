@@ -25,6 +25,16 @@ const skills = [
     ],
   },
   {
+    category: "AI & LLMs",
+    items: [
+      "Claude / Claude Code",
+      "MCP (Model Context Protocol)",
+      "OpenCode",
+      "Llama",
+      "Qwen Coder",
+    ],
+  },
+  {
     category: "Tools & Cloud",
     items: [
       "Git",
