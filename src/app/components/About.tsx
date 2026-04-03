@@ -16,8 +16,9 @@ const skills = [
     items: [
       "Node.js",
       "Express",
-      "C# / ASP.NET",
+      "C# / .NET Core",
       "REST APIs",
+      "SQL Server",
       "MongoDB",
       "PostgreSQL",
       "Supabase",
@@ -39,11 +40,28 @@ const skills = [
 
 const experience = [
   {
-    role: "Software Developer",
-    company: "Intertech, Inc.",
-    location: "St. Paul, MN",
+    role: "Application Developer III",
+    company: "Marco Technologies",
+    period: "Dec 2024 - Present",
+    location: "Minnetonka, MN (Remote)",
     description:
-      "Full-stack development consulting across JavaScript, React, .NET, Azure, and cloud migration projects for enterprise clients.",
+      "Full-stack application development with React.js and .NET Core, building internal tools and integrations for a national technology solutions provider.",
+  },
+  {
+    role: "Software Development Consultant",
+    company: "Intertech",
+    period: "May 2019 - Dec 2024",
+    location: "Eagan, MN",
+    description:
+      "Full-stack consulting across JavaScript, React, .NET, Azure, and cloud migration projects for enterprise clients. Recognized as a standout internal staff consultant.",
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Transcendent Technologies, Inc.",
+    period: "May 2017 - Oct 2017",
+    location: "Neenah, WI",
+    description:
+      "Software engineering internship gaining hands-on experience in professional development workflows.",
   },
 ];
 
@@ -95,12 +113,15 @@ export default function About() {
                 Experience
               </h3>
               {experience.map((exp) => (
-                <div key={exp.company} className="mb-4">
+                <div key={exp.company} className="mb-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                     <h4 className="font-medium text-foreground">{exp.role}</h4>
                     <span className="text-sm text-muted">{exp.location}</span>
                   </div>
-                  <p className="text-accent text-sm mb-2">{exp.company}</p>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 mb-2">
+                    <p className="text-accent text-sm">{exp.company}</p>
+                    <span className="text-xs text-muted">{exp.period}</span>
+                  </div>
                   <p className="text-sm text-muted">{exp.description}</p>
                 </div>
               ))}
