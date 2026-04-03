@@ -106,9 +106,9 @@ export default function About() {
             </p>
             <p className="text-muted leading-relaxed">
               I work across the entire stack &mdash; from React and Next.js on the
-              frontend to Node.js, Express, and MongoDB on the backend, with
-              deployment on Vercel and Azure. I care about shipping things that
-              work well, load fast, and are genuinely useful.
+              frontend to Node.js, Express, C#, and .NET Core on the backend, with
+              databases like MongoDB and SQL Server and deployment on Vercel and Azure.
+              I care about shipping things that work well, load fast, and are genuinely useful.
             </p>
 
             {/* Experience */}
