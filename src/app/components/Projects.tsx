@@ -71,8 +71,8 @@ const projects = [
     description:
       "Browser-based voxel bush-flying simulator built from scratch with custom aerodynamics. Procedural simplex-noise terrain streams around the player with biome-based block coloring, while a flyable Super Cub models stall, ground effect, weathercock yaw stability, and dihedral roll for realistic-ish flight.",
     image: "/projects/block-flight.png",
-    imageWidth: 1280,
-    imageHeight: 720,
+    imageWidth: 1910,
+    imageHeight: 894,
     url: "https://block-flight.vercel.app",
     tags: [
       "TypeScript",
