@@ -66,6 +66,28 @@ const projects = [
       "Theft report correlation with copper wire crime data",
     ],
   },
+  {
+    title: "Block Flight",
+    description:
+      "Browser-based voxel bush-flying simulator built from scratch with custom aerodynamics. Procedural simplex-noise terrain streams around the player with biome-based block coloring, while a flyable Super Cub models stall, ground effect, weathercock yaw stability, and dihedral roll for realistic-ish flight.",
+    image: "/projects/block-flight.png",
+    imageWidth: 1280,
+    imageHeight: 720,
+    url: "https://block-flight.vercel.app",
+    tags: [
+      "TypeScript",
+      "Vite",
+      "Three.js",
+      "WebGL",
+      "simplex-noise",
+      "Vercel",
+    ],
+    highlights: [
+      "Custom force integrator with stall, ground effect, and stability derivatives",
+      "Procedural voxel chunks streamed around the plane with biome coloring",
+      "Chase + cockpit cameras with full keyboard flight controls",
+    ],
+  },
 ];
 
 export default function Projects() {
@@ -100,8 +122,8 @@ export default function Projects() {
                     <Image
                       src={project.image}
                       alt={`Screenshot of ${project.title}`}
-                      width={1280}
-                      height={800}
+                      width={project.imageWidth ?? 1280}
+                      height={project.imageHeight ?? 800}
                       className="w-full h-auto"
                     />
                     <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
